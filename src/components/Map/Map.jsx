@@ -12,12 +12,17 @@ const apiKey = googleKey
 
 const Map = () => {
 
+    //ola dudinha
+
+    // outro comment
+
     const matches = useMediaQuery('(min-width:600px)');
     const classes = useStyles();
 
     const coordinates = {
         'lat': -21.19137,
-        'lng': -47.78118
+        'lng': -47.78118,
+        'hello': 'world'
     };
 
     return (
