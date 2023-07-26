@@ -6,7 +6,9 @@ import Rating from '@material-ui/lab/Rating';
 
 import useStyles from './styles.js';
 
-const apiKey = 'AIzaSyBXedMiFX16twofsbJev4SvuxjMWmGEmTs'
+import googleKey from '../../../dev.js';
+
+const apiKey = googleKey
 
 const Map = () => {
 
