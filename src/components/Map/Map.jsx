@@ -10,7 +10,7 @@ import useStyles from './styles.js';
 
 const apiKey = "AIzaSyBXedMiFX16twofsbJev4SvuxjMWmGEmTs"
 
-const Map = () => {
+const Map = ({ setCoordinates, setBounds, coordinates }) => {
 
     //ola dudinha
 
@@ -18,12 +18,6 @@ const Map = () => {
 
     const matches = useMediaQuery('(min-width:600px)');
     const classes = useStyles();
-
-    const coordinates = {
-        'lat': -21.19137,
-        'lng': -47.78118,
-        'hello': 'world'
-    };
 
     return (
         <div className={ classes.mapContainer }>
@@ -34,7 +28,10 @@ const Map = () => {
                 defaultZoom={14}
                 margin={[50,50,50,50]}
                 options={''}
-                onChange={''}
+                onChange={(e) => {
+                    setCoordinates({ lat: e.center.lat, lng: e.center.lng })
+                    setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.se })
+                }}
                 onChildClick={''}
             >
 
